@@ -5,10 +5,88 @@
         <meta name="viewport" content="width-device-width, initial-scale=1.0" />
         <title>Loading Animation</title>
         <style>
-
+            .cover{
+                width: 30px;
+                height: 30px;
+                background-color: white;
+                border-radius: 50%;
+                z-index: 99 !important;
+            }
+            .animated-element{
+                width: 20px;
+                height: 20px;
+                background-color: blue;
+                border-radius: 50%;
+                position: absolute;
+                animation: circle 2s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
+            }
+            .animated-element::after{
+                content: '';
+                display: block;
+                width: 20px;
+                height: 20px;
+                background-color: red;
+                border-radius: 50%;
+                animation: xAxis 2s infinite cubic-bezier(0.3, 0.27, 0.07, 1.64);
+            }
+            .container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh; /* This centers vertically */
+                perspective: 100px; /* adjust perspective depth */
+            }
+            .animated-element:nth-child(1){
+                animation-delay: 0s;
+            }
+            .animated-element:nth-child(2){
+                animation-delay: 0.1s;
+            }
+            .animated-element:nth-child(3){
+                animation-delay: 0.2s;
+            }
+            .animated-element:nth-child(4){
+                animation-delay: 0.3s;
+            }
+            .animated-element:nth-child(5){
+                animation-delay: 0.4s;
+            }
+            .animated-element:nth-child(6){
+                animation-delay: 0.5s;
+            }
+            .animated-element:nth-child(7){
+                animation-delay: 0.6s;
+            }
+            .animated-element:nth-child(8){
+                animation-delay: 0.7s;
+            }
+            @keyframes circle{
+                0%{
+                    transform: rotate(0deg) translateX(100px);
+                }
+                100%{
+                    transform: rotate(360deg) translateX(100px);
+                }
+            }
+            @keyframes xAxis {
+                50% {
+                    transform: translateX(100px);
+                }
+            }
         </style>
     </head>
     <body>
         <h1>CSS Loading Animation</h1>
+        <div class="container">
+            <div class="cover"></div>
+            <div class="animated-element"></div>
+            <div class="animated-element"></div>
+            <div class="animated-element"></div>
+            <div class="animated-element"></div>
+            <div class="animated-element"></div>
+            <div class="animated-element"></div>
+            <div class="animated-element"></div>
+            <div class="animated-element"></div>
+        </div>
     </body>
 </html>
