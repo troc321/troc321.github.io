@@ -21,11 +21,11 @@
                 border-radius: 50%;
                 z-index: 99 !important;
                 /*transform: translateX(143px) translateY(-80px);*/
-                animation: ballBounce 5s infinite;
+                animation: ballBounce 3s infinite;
             }
 
             .animated-text {
-                animation: letterBounce 5s infinite;
+                animation: letterBounce 3s infinite cubic-bezier(0,.94,1,.99);
             }
 
             .animated-text:nth-child(2){
@@ -33,11 +33,11 @@
             }
 
             .animated-text:nth-child(3){
-                animation-delay: 1s;
+                animation-delay: .6s;
             }
 
             .animated-text:nth-child(4){
-                animation-delay: 2s;
+                animation-delay: 1.2s;
             }
 
             @keyframes letterBounce {
@@ -45,6 +45,7 @@
                     transform: translateY(0)
                 }
                 50% {
+                    opacity: 50%;
                     transform: translateY(50px)
                 }
                 100% {
@@ -54,25 +55,25 @@
 
             @keyframes ballBounce {
                 0% {
-                    transform: translateX(92px) translateY(-40px);
+                    transform: translateX(92px) translateY(-55px);
                 }
                 10% {
                     transform: translateX(143px) translateY(-110px);
                 }
                 20% {
-                    transform: translateX(195px) translateY(-40px);
+                    transform: translateX(195px) translateY(-55px);
                 }
                 30% {
                     transform: translateX(247px) translateY(-110px);
                 }
                 40% {
-                    transform: translateX(325px) translateY(-40px);
+                    transform: translateX(325px) translateY(-55px);
                 }
                 50% {
                     transform: translateX(377px) translateY(-110px);
                 }
                 100%{
-                    transform: translateX(92px) translateY(-40px);
+                    transform: translateX(92px) translateY(-55px);
                 }
             }
         </style>
