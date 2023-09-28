@@ -12,20 +12,17 @@
                 height: 100vh; /* This centers vertically */
                 perspective: 100px; /* adjust perspective depth */
                 font-size: 100px;
+                background-color: wheat;
             }
 
             .circle{
-                width: 60px;
-                height: 60px;
-                background-color: blue;
-                border-radius: 50%;
-                z-index: 99 !important;
                 /*transform: translateX(143px) translateY(-80px);*/
-                animation: ballBounce 3s infinite;
+                transform-origin: center;
+                animation: ballBounce 4s ease-in-out infinite;
             }
 
             .animated-text {
-                animation: letterBounce 3s infinite cubic-bezier(0,.94,1,.99);
+                animation: letterBounce 4s infinite cubic-bezier(0,.94,1,.99);
             }
 
             .animated-text:nth-child(2){
@@ -33,58 +30,84 @@
             }
 
             .animated-text:nth-child(3){
-                animation-delay: .6s;
+                animation-delay: .8s;
             }
 
             .animated-text:nth-child(4){
-                animation-delay: 1.2s;
+                animation-delay: 1.6s;
             }
 
             @keyframes letterBounce {
                 0% {
+                    opacity: 15%;
                     transform: translateY(0)
                 }
                 50% {
-                    opacity: 50%;
+                    opacity: 100%;
+                    color: #2F88FF;
                     transform: translateY(50px)
                 }
                 100% {
+                    opacity: 15%;
                     transform: translateY(0)
                 }
             }
 
             @keyframes ballBounce {
                 0% {
-                    transform: translateX(92px) translateY(-55px);
+                    opacity: 0%;
+                    transform: translateX(120px) translateY(-55px) rotate(0deg);
                 }
                 10% {
-                    transform: translateX(143px) translateY(-110px);
+                    opacity: 100%;
+                    transform: translateX(180px) translateY(-150px) rotate(60deg);
                 }
                 20% {
-                    transform: translateX(195px) translateY(-55px);
+                    transform: translateX(260px) translateY(-55px) rotate(120deg);
                 }
                 30% {
-                    transform: translateX(247px) translateY(-110px);
+                    transform: translateX(330px) translateY(-150px) rotate(180deg);
                 }
                 40% {
-                    transform: translateX(325px) translateY(-55px);
+                    opacity: 100%;
+                    transform: translateX(400px) translateY(-55px) rotate(240deg);
                 }
                 50% {
-                    transform: translateX(377px) translateY(-110px);
+                    opacity: 0%;
+                    transform: translateX(470px) translateY(-150px) rotate(300deg);
+                }
+                60% {
+                    opacity: 0%;
+                }
+                70% {
+                    opacity: 0%;
+                }
+                80% {
+                    opacity: 0%;
+                }
+                100% {
+                    opacity: 0%;
                 }
                 100%{
-                    transform: translateX(92px) translateY(-55px);
+                    transform: translateX(100px) translateY(-55px) rotate(360deg);
                 }
             }
         </style>
     </head>
     <body>
-        <h1>CSS Loading Animation Project</h1>
         <div class="container">
-            <div class="circle"></div>
-            <span class="animated-text" style="font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;">Lo</span>
-            <span class="animated-text" style="font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;">ad</span>
-            <span class="animated-text" style="font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;">ing</span>
+
+            <svg class="circle" width="80px" height="80px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" fill="white" fill-opacity="0.01"/>
+            <path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" fill="#2F88FF" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M31 18V19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17 18V19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M31 31C31 31 29 35 24 35C19 35 17 31 17 31" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+
+            <span class="animated-text" style="font-family: Chalkduster, fantasy;">Lo</span>
+            <span class="animated-text" style="font-family: Chalkduster, fantasy;">ad</span>
+            <span class="animated-text" style="font-family: Chalkduster, fantasy;">ing</span>
         </div>
     </body>
 </html>
