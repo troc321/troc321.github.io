@@ -5,15 +5,7 @@
         <meta name="viewport" content="width-device-width, initial-scale=1.0" />
         <title>Infographic</title>
         <style>
-			/*style*/
-        </style>
-    </head>
-
-    <body>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.73932 506.4458">
-			<defs>
-			  <style>
-				.cls-1, .cls-2 {
+			.cls-1, .cls-2 {
 				  fill: #e59222;
 				}
 		  
@@ -52,8 +44,72 @@
 				.cls-8, .cls-2, .cls-10, .cls-12, .cls-14 {
 				  opacity: .3;
 				}
-			  </style>
-			</defs>
+
+				#bar-01{
+					transform: scaleX(0);
+					transform-origin: left;
+					transform-box: fill-box;
+					transition: transform 1s linear;
+				}
+
+				#shadow-01{
+					opacity: 0;
+				}
+
+				#arrows-01 {
+					transform: translateX(-20px);
+					transition: all 2s linear;
+				}
+
+				#data-01:hover > #bar-01 {
+					transform: scaleX(1);
+				}
+
+				#data-01:hover > #shadow-01 {
+					opacity: 1;
+					transition: all 1s linear;
+				}
+
+				#data-01:hover > #arrows-01 {
+					transform: translateX(5px);
+					animation-delay: 2s;
+				}
+
+				#bar-02{
+					transform: scaleX(0);
+					transform-box: fill-box;
+					transform-origin: left;
+					transition: transform 1s linear;
+				}
+
+				#shadow-02{
+					opacity: 0;
+				}
+
+				#arrows-02 {
+					transform: translateX(-20px);
+					transition: all 2s linear;
+				}
+
+				#data-02:hover > #bar-02 {
+					transform: scaleX(1);
+				}
+
+				#data-02:hover > #shadow-02 {
+					opacity: 1;
+					transition: all 1s linear;
+				}
+
+				#data-02:hover > #arrows-02 {
+					transform: translateX(5px);
+					animation-delay: 2s;
+				}
+
+        </style>
+    </head>
+
+    <body>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.73932 506.4458">
 			<g id="background">
 			  <g>
 				<g>
