@@ -18,11 +18,11 @@
             .circle{
                 /*transform: translateX(143px) translateY(-80px);*/
                 transform-origin: center;
-                animation: ballBounce 4s ease-in-out infinite;
+                animation: ballBounce 4s cubic-bezier(.5,.17,.3,.66) infinite;
             }
 
             .animated-text {
-                animation: letterBounce 4s infinite cubic-bezier(0,.94,1,.99);
+                animation: letterBounce 4s infinite cubic-bezier(.51,.6,.24,1);
             }
 
             .animated-text:nth-child(2){
@@ -56,28 +56,29 @@
             @keyframes ballBounce {
                 0% {
                     opacity: 0%;
-                    transform: translateX(120px) translateY(-55px) rotate(0deg);
+                    transform: translateX(40px) translateY(-110px) rotate(0deg);
                 }
                 10% {
                     opacity: 100%;
-                    transform: translateX(180px) translateY(-150px) rotate(60deg);
+                    transform: translateX(120px) translateY(-40px) rotate(0deg);
                 }
                 20% {
-                    transform: translateX(260px) translateY(-55px) rotate(120deg);
+                    opacity: 100%;
+                    transform: translateX(175px) translateY(-110px) rotate(60deg);
                 }
                 30% {
-                    transform: translateX(330px) translateY(-150px) rotate(180deg);
+                    transform: translateX(245px) translateY(-40px) rotate(120deg);
                 }
                 40% {
-                    opacity: 100%;
-                    transform: translateX(400px) translateY(-55px) rotate(240deg);
+                    transform: translateX(315px) translateY(-110px) rotate(180deg);
                 }
                 50% {
-                    opacity: 0%;
-                    transform: translateX(470px) translateY(-150px) rotate(300deg);
+                    opacity: 100%;
+                    transform: translateX(385px) translateY(-40px) rotate(240deg);
                 }
                 60% {
                     opacity: 0%;
+                    transform: translateX(455px) translateY(-110px) rotate(300deg);
                 }
                 70% {
                     opacity: 0%;
@@ -85,10 +86,14 @@
                 80% {
                     opacity: 0%;
                 }
-                100% {
+                90% {
+                    opacity: 0%;
+                }
+                95% {
                     opacity: 0%;
                 }
                 100%{
+                    opacity: 0%;
                     transform: translateX(100px) translateY(-55px) rotate(360deg);
                 }
             }
