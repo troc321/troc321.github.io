@@ -127,23 +127,27 @@
 					transition: all 2s linear;
 				}
 
+				.barAnimate {
+					transform: scaleX(1);
+				}
+
 		</style>
 		<script>
 			const button = document.getElementById("data3Button")
 			const shadow = document.getElementById("shadow-03")
 			const arrows = document.getElementById("arrows-03")
 			const bar = document.getElementById("bar-03")
-			button.addEventListener('click', open);
+			button.addEventListener('click', open)
 
 			function open() {
-				bar.style.transform = "scaleX(1)";
+				bar.classList.add('barAnimate')
 			}
 
 			function close() {
-				bar.style.transform = "scaleX(0)";
-				shadow.style.opacity = "0";
-				arrows.style.transform = "translateX(-20px)";
-				arrows.style.transition = "all 2s linear";
+				bar.style.transform = "scaleX(0)"
+				shadow.style.opacity = "0"
+				arrows.style.transform = "translateX(-20px)"
+				arrows.style.transition = "all 2s linear"
 			}
 		</script>
     </head>
@@ -652,6 +656,7 @@
 			  <g id="shadow-03">
 				<path class="cls-9" d="m67.8691,284.8266c0-18.3632-14.8876-33.2549-33.25578-33.2549-18.36522,0-33.2549,14.8917-33.2549,33.2549,0,18.3653,14.88968,33.2559,33.2549,33.2559,18.36818,0,33.25578-14.8906,33.25578-33.2559Z"/>
 			  </g>
+			</g>
 			  <g id="icon-03">
 				<circle class="cls-6" cx="31.71387" cy="282.5493" r="31.71339"/>
 				<circle class="cls-8" cx="31.71387" cy="282.5493" r="25.08939"/>
@@ -660,7 +665,6 @@
 				<rect class="cls-3" x="21.19632" y="280.7915" width="7.52248" height="9.8613"/>
 				<rect class="cls-11" x="27.5352" y="270.9282" width="7.52142" height="19.7246"/>
 			  </g>
-			</g>
 		    </a>
 			<a href="#data-02">
 			<g id="data-02">
