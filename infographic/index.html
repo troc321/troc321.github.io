@@ -111,18 +111,18 @@
 
 				/*ANIMATION 3*/
 
-				#bar-03{
+				.bar-03{
 					transform: scaleX(0);
 					transform-box: fill-box;
 					transform-origin: left;
 					transition: transform 1s linear;
 				}
 
-				#shadow-03{
+				.shadow-03{
 					opacity: 0;
 				}
 
-				#arrows-03 {
+				.arrows-03 {
 					transform: translateX(-20px);
 					transition: all 2s linear;
 				}
@@ -131,25 +131,35 @@
 					transform: scaleX(1);
 				}
 
+				.shadowAnimate {
+					opacity: 1;
+					transition: all 1s linear;
+				}
+
+				.arrowsAnimate {
+					transform: translateX(5px);
+					animation-delay: 2s;
+				}
+
+				/*ANIMATION 4*/
+				.bar-04{
+					transform: scaleX(0);
+					transform-box: fill-box;
+					transform-origin: left;
+					transition: transform 1s linear;
+				}
+
+				.shadow-04{
+					opacity: 0;
+				}
+
+				.arrows-04 {
+					transform: translateX(-20px);
+					transition: all 2s linear;
+				}
+
+
 		</style>
-		<script>
-			const button = document.getElementById("data3Button")
-			const shadow = document.getElementById("shadow-03")
-			const arrows = document.getElementById("arrows-03")
-			const bar = document.getElementById("bar-03")
-			button.addEventListener('click', open)
-
-			function open() {
-				bar.classList.add('barAnimate')
-			}
-
-			function close() {
-				bar.style.transform = "scaleX(0)"
-				shadow.style.opacity = "0"
-				arrows.style.transform = "translateX(-20px)"
-				arrows.style.transition = "all 2s linear"
-			}
-		</script>
     </head>
 
     <body>
@@ -350,7 +360,7 @@
 			  </g>
 			</g>
 			<g id="data-04">
-			  <path id="bar-04" class="cls-1" d="m332.73932,376.27c0-12.8691-10.4336-23.3008-23.3028-23.3008H43.9365c-12.8681,0-23.3017,10.4317-23.3017,23.3008h0c0,12.8701,10.4336,23.3027,23.3017,23.3027h265.50002c12.8692,0,23.3028-10.4326,23.3028-23.3027h0Z"/>
+			  <path id="bar-04" class="bar-04 cls-1" d="m332.73932,376.27c0-12.8691-10.4336-23.3008-23.3028-23.3008H43.9365c-12.8681,0-23.3017,10.4317-23.3017,23.3008h0c0,12.8701,10.4336,23.3027,23.3017,23.3027h265.50002c12.8692,0,23.3028-10.4326,23.3028-23.3027h0Z"/>
 			  <g id="text-04">
 				<g>
 				  <path class="cls-3" d="m77.61624,370.18798v-6.3125h1.40918v5.05762h2.69141v1.25488h-4.10059Z"/>
@@ -491,11 +501,11 @@
 				  <path class="cls-3" d="m116.54983,383.67431v.9043h-.35254v-1.6709h.35254v.30469c.0498-.10254.12598-.18359.22754-.24219s.21094-.08789.32812-.08789c.26367,0,.44238.10938.53711.32715.16504-.21777.37109-.32715.61816-.32715.18848,0,.34082.05762.45703.17285s.1748.28223.1748.5v1.02344h-.35156v-.91699c0-.30762-.12793-.46191-.38379-.46191-.11914,0-.22363.03809-.3125.11523-.08887.07617-.13574.1875-.13965.33398v.92969h-.35156v-.91699c0-.15918-.02832-.27637-.08496-.35059s-.14551-.11133-.2666-.11133c-.12207,0-.22754.04004-.31738.12109s-.13477.19824-.13477.35352Z"/>
 				</g>
 			  </g>
-			  <g id="arrows-04">
+			  <g id="arrows-04" class="arrows-04">
 				<path class="cls-5" d="m251.67772,352.9692h18.1739l17.2871,17.2852c1.5107,1.5127,2.3594,3.5615,2.3594,5.6992s-.8487,4.1875-2.3594,5.6992l-17.9199,17.9199h-18.1748l19.663-19.665c1.0498-1.0488,1.6387-2.4717,1.6387-3.9541s-.5889-2.9063-1.6387-3.9551l-19.0293-19.0293Z"/>
 				<path class="cls-4" d="m282.73242,399.5727l19.6641-19.665c1.0498-1.0488,1.6377-2.4717,1.6377-3.9541s-.5879-2.9063-1.6377-3.9551l-19.0293-19.0293h18.1738l17.2862,17.2852c1.5117,1.5127,2.3593,3.5615,2.3593,5.6992s-.8476,4.1875-2.3593,5.6992l-17.919,17.9199h-18.1758Z"/>
 			  </g>
-			  <g id="shadow-04">
+			  <g id="shadow-04" class="shadow-04">
 				<path class="cls-9" d="m67.66992,378.5063c0-18.2539-14.79882-33.0547-33.0566-33.0547-18.2549,0-33.0547,14.8008-33.0547,33.0547,0,18.2559,14.7998,33.0567,33.0547,33.0567,18.25778,0,33.0566-14.8008,33.0566-33.0567Z"/>
 			  </g>
 			  <g id="icon-04">
@@ -506,9 +516,8 @@
 				<path class="cls-3" d="m22.60352,374.1069c0,5.0322,9.11038,15.6826,9.11038,15.6826,0,0,9.11032-10.6504,9.11032-15.6826s-4.07912-9.1103-9.11032-9.1103c-5.03228,0-9.11038,4.0781-9.11038,9.1103Zm5.51168,0c0-1.9853,1.61142-3.5967,3.5987-3.5967,1.98632,0,3.59672,1.6114,3.59672,3.5967,0,1.9863-1.6104,3.5967-3.59672,3.5967-1.98728,0-3.5987-1.6104-3.5987-3.5967Z"/>
 			  </g>
 			</g>
-			<a id="data3Button" href="#data-03">
 			<g id="data-03">
-			  <path id="bar-03" class="cls-7" d="m292.57812,282.5493c0-12.8692-10.4326-23.3018-23.3007-23.3018H43.9365c-12.8681,0-23.3017,10.4326-23.3017,23.3018h0c0,12.8691,10.4336,23.3017,23.3017,23.3017h225.34092c12.8681,0,23.3007-10.4326,23.3007-23.3017h0Z"/>
+			  <path class="bar-03 cls-7" d="m292.57812,282.5493c0-12.8692-10.4326-23.3018-23.3007-23.3018H43.9365c-12.8681,0-23.3017,10.4326-23.3017,23.3018h0c0,12.8691,10.4336,23.3017,23.3017,23.3017h225.34092c12.8681,0,23.3007-10.4326,23.3007-23.3017h0Z"/>
 			  <g id="text-03">
 				<g>
 				  <path class="cls-3" d="m77.61624,276.46825v-6.3125h1.40918v5.05762h2.69141v1.25488h-4.10059Z"/>
@@ -649,11 +658,11 @@
 				  <path class="cls-3" d="m116.54983,289.95263v.9043h-.35254v-1.6709h.35254v.30469c.0498-.10254.12598-.18359.22754-.24219s.21094-.08789.32812-.08789c.26367,0,.44238.10938.53711.32715.16504-.21777.37109-.32715.61816-.32715.18848,0,.34082.05762.45703.17285s.1748.28223.1748.5v1.02344h-.35156v-.91699c0-.30762-.12793-.46191-.38379-.46191-.11914,0-.22363.03809-.3125.11523-.08887.07617-.13574.1875-.13965.33398v.92969h-.35156v-.91699c0-.15918-.02832-.27637-.08496-.35059s-.14551-.11133-.2666-.11133c-.12207,0-.22754.04004-.31738.12109s-.13477.19824-.13477.35352Z"/>
 				</g>
 			  </g>
-			  <g id="arrows-03">
+			  <g id="arrows-03" class="arrows-03">
 				<path class="cls-4" d="m243.46192,305.851l19.3477-19.3476c1.0498-1.0498,1.6386-2.4736,1.6386-3.9551,0-1.4814-.5888-2.9053-1.6386-3.9541l-19.3457-19.3467h18.1738l17.6035,17.6026c1.5098,1.5117,2.3594,3.5605,2.3594,5.6982s-.8496,4.1865-2.3594,5.7002l-17.6045,17.6025h-18.1748Z"/>
 				<path class="cls-5" d="m211.77442,259.2475h18.1738l17.6026,17.6026c1.5117,1.5117,2.3603,3.5605,2.3603,5.6982s-.8486,4.1865-2.3603,5.7002l-17.6035,17.6025h-18.1748l19.3476-19.3476c1.0498-1.0498,1.6387-2.4736,1.6387-3.9551,0-1.4814-.5889-2.9053-1.6387-3.9541l-19.3457-19.3467Z"/>
 			  </g>
-			  <g id="shadow-03">
+			  <g id="shadow-03" class="shadow-03">
 				<path class="cls-9" d="m67.8691,284.8266c0-18.3632-14.8876-33.2549-33.25578-33.2549-18.36522,0-33.2549,14.8917-33.2549,33.2549,0,18.3653,14.88968,33.2559,33.2549,33.2559,18.36818,0,33.25578-14.8906,33.25578-33.2559Z"/>
 			  </g>
 			</g>
@@ -665,7 +674,6 @@
 				<rect class="cls-3" x="21.19632" y="280.7915" width="7.52248" height="9.8613"/>
 				<rect class="cls-11" x="27.5352" y="270.9282" width="7.52142" height="19.7246"/>
 			  </g>
-		    </a>
 			<a href="#data-02">
 			<g id="data-02">
 			  <path id="bar-02" class="cls-9" d="m292.57812,188.8286c0-12.8692-10.4326-23.3018-23.3007-23.3018H43.9365c-12.8681,0-23.3017,10.4326-23.3017,23.3018h0c0,12.8691,10.4336,23.3017,23.3017,23.3017h225.34092c12.8681,0,23.3007-10.4326,23.3007-23.3017h0Z"/>
@@ -982,6 +990,50 @@
 				<polygon class="cls-11" points="35.25392 93.7622 33.1602 93.7622 33.1602 85.8862 28.97362 95.0737 31.0684 95.0737 31.0684 102.9477 35.25392 93.7622"/>
 			  </g>
 			</g>
+			<script>
+				const button = document.querySelector('#icon-03');
+				const bar3 = document.querySelector('.bar-03');
+				const arrows3 = document.querySelector('.arrows-03');
+				const shadow3 = document.querySelector('.shadow-03');
+		
+				console.log(button)
+		
+				button.addEventListener('click', () => {
+					const isActive = bar3.classList.contains('barAnimate')
+					
+					if (!isActive) {
+						bar3.classList.add('barAnimate')
+						arrows3.classList.add('arrowsAnimate')
+						shadow3.classList.add('shadowAnimate')
+					} else {
+						bar3.classList.remove('barAnimate')
+						arrows3.classList.remove('arrowsAnimate')
+						shadow3.classList.remove('shadowAnimate')
+					}
+				});
+
+				const bar4 = document.querySelector('.bar-04');
+				const arrows4 = document.querySelector('.arrows-04');
+				const shadow4 = document.querySelector('.shadow-04');
+
+				const observer = new IntersectionObserver(entries => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							console.log("hi")
+							bar4.classList.add('barAnimate');
+							arrows4.classList.add('arrowsAnimate');
+							shadow4.classList.add('shadowAnimate');
+							return;
+						}
+						bar4.classList.remove('barAnimate');
+						arrows4.classList.remove('arrowsAnimate');
+						shadow4.classList.remove('shadowAnimate');
+					})
+				});
+		
+				observer.observe(document.querySelector('#data-04'));
+		
+			</script>
 		  </svg>
     </body>
 </html>
