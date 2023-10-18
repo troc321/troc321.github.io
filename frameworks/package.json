@@ -1,0 +1,10 @@
+{
+  "name": "frameworks",
+  "version": "1",
+  "description": "web animation project",
+  "main": "index.html",
+  "license": "MIT",
+  "dependencies": {
+    "@mojs/core": "^1.7.1"
+  }
+}
