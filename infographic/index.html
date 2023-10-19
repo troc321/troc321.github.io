@@ -174,6 +174,36 @@
 					transform: translateY(-500px);
 				}
 
+				/*ANIMATION 5*/
+				.bar-05{
+					transform: scaleX(0);
+					transform-box: fill-box;
+					transform-origin: left;
+					transition: transform 1s linear;
+				}
+
+				.shadow-05{
+					opacity: 0;
+				}
+
+				.arrows-05 {
+					transform: translateX(-20px);
+					transition: all 2s linear;
+				}
+
+				.barAnimate2 {
+					transform: scaleX(1);
+				}
+
+				.shadowAnimate2 {
+					opacity: 1;
+					transition: all 1s linear;
+				}
+
+				.arrowsAnimate2 {
+					transform: translateX(5px);
+					animation-delay: 2s;
+				}
 
 		</style>
     </head>
@@ -214,7 +244,7 @@
 			  </g>
 			</g>
 			<g id="data-05">
-			  <path id="bar-05" class="cls-11" d="m299.72462,469.7505c0-12.8692-10.4326-23.3018-23.3017-23.3018H43.9365c-12.8681,0-23.3017,10.4326-23.3017,23.3018h0c0,12.8691,10.4336,23.3027,23.3017,23.3027h232.48642c12.8691,0,23.3017-10.4336,23.3017-23.3027h0Z"/>
+			  <path id="bar-05" class="bar-05 cls-11" d="m299.72462,469.7505c0-12.8692-10.4326-23.3018-23.3017-23.3018H43.9365c-12.8681,0-23.3017,10.4326-23.3017,23.3018h0c0,12.8691,10.4336,23.3027,23.3017,23.3027h232.48642c12.8691,0,23.3017-10.4336,23.3017-23.3027h0Z"/>
 			  <g id="text-05">
 				<g>
 				  <path class="cls-3" d="m77.61624,463.66845v-6.3125h1.40918v5.05762h2.69141v1.25488h-4.10059Z"/>
@@ -355,11 +385,11 @@
 				  <path class="cls-3" d="m116.54983,477.1538v.9043h-.35254v-1.6709h.35254v.30469c.0498-.10254.12598-.18359.22754-.24219s.21094-.08789.32812-.08789c.26367,0,.44238.10938.53711.32715.16504-.21777.37109-.32715.61816-.32715.18848,0,.34082.05762.45703.17285s.1748.28223.1748.5v1.02344h-.35156v-.91699c0-.30762-.12793-.46191-.38379-.46191-.11914,0-.22363.03809-.3125.11523-.08887.07617-.13574.1875-.13965.33398v.92969h-.35156v-.91699c0-.15918-.02832-.27637-.08496-.35059s-.14551-.11133-.2666-.11133c-.12207,0-.22754.04004-.31738.12109s-.13477.19824-.13477.35352Z"/>
 				</g>
 			  </g>
-			  <g id="arrows-05">
+			  <g id="arrows-05" class="arrows-05">
 				<path class="cls-5" d="m222.02152,446.4487h18.1748l16.8652,16.8643c1.5117,1.5127,2.3604,3.5625,2.3604,5.6992,0,2.1387-.8487,4.1875-2.3604,5.7002l-18.3408,18.3408h-18.1748l20.085-20.0859c1.0498-1.0489,1.6386-2.4727,1.6386-3.9551,0-1.4815-.5888-2.9063-1.6386-3.9551l-18.6094-18.6084Z"/>
 				<path class="cls-4" d="m252.23542,493.0532l20.0849-20.0859c1.0498-1.0489,1.6377-2.4727,1.6377-3.9551,0-1.4815-.5879-2.9063-1.6377-3.9551l-18.6094-18.6084h18.1748l16.8653,16.8643c1.5117,1.5127,2.3603,3.5625,2.3603,5.6992,0,2.1387-.8486,4.1875-2.3603,5.7002l-18.3408,18.3408h-18.1748Z"/>
 			  </g>
-			  <g id="shadow-05">
+			  <g id="shadow-05" class="shadow-05">
 				<circle class="cls-9" cx="34.85742" cy="472.7251" r="33.72121"/>
 			  </g>
 			  <g id="icon-05">
@@ -1014,8 +1044,6 @@
 			const arrows3 = document.querySelector('.arrows-03');
 			const shadow3 = document.querySelector('.shadow-03');
 	
-			console.log(button)
-	
 			button.addEventListener('click', () => {
 				const isActive = bar3.classList.contains('barAnimate')
 				
@@ -1030,10 +1058,6 @@
 				}
 			});
 
-			const bar4 = document.querySelector('.bar-04');
-			const arrows4 = document.querySelector('.arrows-04');
-			const shadow4 = document.querySelector('.shadow-04');
-			
 			// Scroll triggered SVG
 			// Get the trigger element + the element to change
 			const detector = document.querySelector('#detector')
@@ -1053,6 +1077,28 @@
 				});
 			});
 			observer.observe(detector);
+
+			//keydown event activate 5th infograpic
+			const bar5 = document.querySelector('.bar-05');
+			const arrows5 = document.querySelector('.arrows-05');
+			const shadow5 = document.querySelector('.shadow-05');
+
+			function thing() {
+				const isActive2 = bar5.classList.contains('barAnimate2')
+				
+				if (!isActive2) {
+					bar5.classList.add('barAnimate2')
+					arrows5.classList.add('arrowsAnimate2')
+					shadow5.classList.add('shadowAnimate2')
+				} else {
+					bar5.classList.remove('barAnimate2')
+					arrows5.classList.remove('arrowsAnimate2')
+					shadow5.classList.remove('shadowAnimate2')
+				}
+			}
+	
+			addEventListener("keydown", thing)
+
 		</script>
     </body>
 </html>
