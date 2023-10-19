@@ -161,8 +161,17 @@
 				#data-04.active > #bar-04 {
 					transform: scaleX(1);
 				}
+				#data-04.active > #shadow-04 {
+					opacity: 1;
+					transition: all 1s linear;
+				}
+
+				#data-04.active > #arrows-04 {
+					transform: translateX(5px);
+					animation-delay: 2s;
+				}
 				#detector {
-					transform: translateY(-250px);
+					transform: translateY(-500px);
 				}
 
 
@@ -1043,7 +1052,7 @@
 					}
 				});
 			});
-			observer.observe(trigger);
+			observer.observe(detector);
 		</script>
     </body>
 </html>
