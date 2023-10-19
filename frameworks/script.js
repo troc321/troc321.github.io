@@ -14,29 +14,86 @@
 
 bouncyCircle.play()*/
 
-class Leaf extends mojs.CustomShape {
-    getShape () { return '<path d="M12.06134,76.12853s-1.58818-13.42736,12.99422-33.20745c0,0,2.45446-2.8876,2.45446-6.49711s-.43314-7.65215-.43314-7.65215c0,0,1.4438-7.79653,4.18703-10.53976s12.70546-7.50777,12.70546-7.50777c0,0,16.17059-4.04265,31.47489,6.64149l-6.78587,11.55042-2.31008,5.77521s-6.78587,13.28298-21.9458,12.56108c-15.15992-.7219-14.43802-4.76455-14.43802-4.76455,0,0-18.04753,14.36583-17.47001,54.72011l-.43314-21.07951Z"/>'; }
+class Lily1 extends mojs.CustomShape {
+    getShape () { return '<path d="M47.54541,26.45785s-16.33536-1.92181-21.13988,10.56994-.9609,16.81582,1.44136,22.10079,29.30756,14.89401,35.07299-5.76542-5.28497-23.54214-5.28497-23.54214l-10.56994,9.12859,.48045-12.49175Z"/>'; }
 }
-mojs.addShape( 'leaf', Leaf );
+mojs.addShape( 'lily1', Lily1 );
+
+class Lily2 extends mojs.CustomShape {
+  getShape () { return '<path class="cls-1" d="M75.55151,43.00006c-.41345-5.78796-8.68195-29.35327-28.93982-31.8338C26.35376,8.68567,10.64355,19.02136,8.98987,47.13434c-.84833,14.42151,8.74762,22.53052,18.29553,27.01074l6.7851-9.80072v12.45807c2.44623,.7901,4.69171,1.35333,6.53003,1.74945,2.87402,.82526,16.84814,4.15051,24.61536-6.612,5.37451-3.72083,10.74902-23.15186,10.33563-28.93982Z"/>'; }
+}
+mojs.addShape( 'lily2', Lily2 );
+
+class Lily3 extends mojs.CustomShape {
+  getShape () { return '<path d="M43.9231,23.84271s-2.93292-.19507-6.17487-.31l.01282-.08203s-1.40173-.14124-3.37335,.00336c-.22327-.00189-.44598-.00354-.66229-.00354l-.00122,.06226c-1.50031,.15277-3.24695,.47595-4.94202,1.13513l4.55115,18.40692-.00012,.00671-9.02112-17.25769s-18.8266,12.9433-11.7666,31.76984c7.06,18.8266,26.67102,21.96436,39.22205,15.68884,12.55109-6.27551,29.41656-38.04541-7.84442-49.4198Z"/>'; }
+}
+mojs.addShape( 'lily3', Lily3 );
+
+class Lily4 extends mojs.CustomShape {
+  getShape () { return '<path class="cls-1" d="M15.35805,65.63314S5.71325,32.7078,39.96891,25.39106s37.58144,21.28507,37.58144,26.27375-7.31674,39.9095-37.58144,28.93439l1.99547-17.95927-12.63801,13.30317s-7.64932,0-13.96832-10.30995Z"/>'; }
+}
+mojs.addShape( 'lily4', Lily4 );
   
-const leaf = new mojs.Shape({
-    parent:   '#leaf',
-    shape:    'leaf', 
-    fill:     '#b1c236',
+const lily1 = new mojs.Shape({
+    parent:   '#lily1',
+    shape:    'lily1', 
+    fill:     '#8eab62',
     easing:       'back.inout',
-    x: {50: 150},
-    y: {50: 150},
+    x: {50: 90},
+    y: {50: 90},
     duration:     7000,
     isYoyo: true,
     repeat: 999,
 });
 
-leaf.play()
+lily1.play()
+
+const lily2 = new mojs.Shape({
+  parent:   '#lily2',
+  shape:    'lily2', 
+  fill:     '#9dbb67',
+  easing:       'back.inout',
+  x: {650: 610},
+  duration:     9000,
+  isYoyo: true,
+  repeat: 999,
+});
+
+lily2.play()
+
+const lily3 = new mojs.Shape({
+  parent:   '#lily3',
+  shape:    'lily3',
+  fill:     '#8eba5e',
+  easing:       'back.inout',
+  y: {100: 80},
+  x: {10: -20},
+  duration:     5000,
+  isYoyo: true,
+  repeat: 999,
+});
+
+lily3.play()
+
+const lily4 = new mojs.Shape({
+  parent:   '#lily4',
+  shape:    'lily4',
+  fill:     '#b1c366',
+  y: {100: 90},
+  x: {10: 0},
+  easing:       'back.inout',
+  duration:     2000,
+  isYoyo: true,
+  repeat: 999,
+});
+
+lily4.play()
 
 const burst = new mojs.Burst({
     left: 0, top: 0,
     radius:   { 0: 30 },
     angle:    'rand(0, 360)',
+    count:    8,
     children: {
       shape:        'line',
       stroke:       'white',
@@ -50,7 +107,7 @@ const burst = new mojs.Burst({
   
   const bubbles = new mojs.Burst({
     left: 0, top: 0,
-    radius:   28,
+    radius:   25,
     count:    8,
     timeline: { delay: 100 },
     children: {
@@ -60,7 +117,7 @@ const burst = new mojs.Burst({
       strokeWidth:  { 8: 0 },
       radius:       { 0 : 'rand(6, 10)' },
       degreeShift:  'rand(-50, 50)',
-      duration:     400,
+      duration:     200,
       delay:        'rand(0, 250)',
     }
   });
