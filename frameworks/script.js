@@ -111,7 +111,7 @@ const splash = new mojs.Burst({
     count:    8,
     timeline: { delay: 100 },
     children: {
-      stroke:       'black',
+      stroke:       'white',
       fill:         'none',
       scale:        'rand(.1,2)',
       strokeWidth:  { 8: 0 },
