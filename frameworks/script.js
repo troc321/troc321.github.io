@@ -89,46 +89,71 @@ const lily4 = new mojs.Shape({
 
 lily4.play()
 
-const burst = new mojs.Burst({
+const splash = new mojs.Burst({
     left: 0, top: 0,
-    radius:   { 0: 30 },
+    radius:   { 0: 50 },
     angle:    'rand(0, 360)',
     count:    8,
     children: {
       shape:        'line',
       stroke:       'white',
-      fill:         'none',
-      scale:        'rand(.1,1)',
+      fill:         'white',
+      scale:        'rand(.5,.75)',
       scaleX:       { 1: 0 },
-      easing:       'cubic.out',
-      duration:     1000
+      easing:       'circ.out',
+      duration:     500
     }
   });
   
   const bubbles = new mojs.Burst({
     left: 0, top: 0,
-    radius:   25,
+    radius:   50,
     count:    8,
     timeline: { delay: 100 },
     children: {
       stroke:       'white',
       fill:         'none',
-      scale:        'rand(.1,1)',
+      scale:        'rand(.1,2)',
       strokeWidth:  { 8: 0 },
       radius:       { 0 : 'rand(6, 10)' },
       degreeShift:  'rand(-50, 50)',
-      duration:     200,
+      duration:     750,
+      easing:       'circ.out',
       delay:        'rand(0, 250)',
+    }
+  });
+
+  const moveSplash = new mojs.Burst({
+    left: 0, top: 0,
+    radius:   20,
+    count:    6,
+    timeline: { delay: 50 },
+    children: {
+      stroke:       'white',
+      fill:         'none',
+      scale:        'rand(.1,.75)',
+      strokeWidth:  { 8: 0 },
+      radius:       { 0 : 'rand(6, 10)' },
+      degreeShift:  'rand(-50, 50)',
+      duration:     750,
+      easing:       'circ.out',
     }
   });
   
   document.addEventListener( 'click', function (e) {
-    burst
+    splash
       .tune({ x: e.pageX, y: e.pageY })
       .generate()
       .replay();
     
     bubbles
+      .tune({ x: e.pageX, y: e.pageY })
+      .generate()
+      .replay();
+  });
+
+  document.addEventListener( 'mousemove', function (e) {
+    moveSplash
       .tune({ x: e.pageX, y: e.pageY })
       .generate()
       .replay();

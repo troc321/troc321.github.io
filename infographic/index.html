@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Infographic</title>
         <style>
 			.cls-1, .cls-2 {
@@ -156,6 +156,13 @@
 				.arrows-04 {
 					transform: translateX(-20px);
 					transition: all 2s linear;
+				}
+
+				#data-04.active > #bar-04 {
+					transform: scaleX(1);
+				}
+				#detector {
+					transform: translateY(-250px);
 				}
 
 
@@ -990,50 +997,52 @@
 				<polygon class="cls-11" points="35.25392 93.7622 33.1602 93.7622 33.1602 85.8862 28.97362 95.0737 31.0684 95.0737 31.0684 102.9477 35.25392 93.7622"/>
 			  </g>
 			</g>
-			<script>
-				const button = document.querySelector('#icon-03');
-				const bar3 = document.querySelector('.bar-03');
-				const arrows3 = document.querySelector('.arrows-03');
-				const shadow3 = document.querySelector('.shadow-03');
-		
-				console.log(button)
-		
-				button.addEventListener('click', () => {
-					const isActive = bar3.classList.contains('barAnimate')
-					
-					if (!isActive) {
-						bar3.classList.add('barAnimate')
-						arrows3.classList.add('arrowsAnimate')
-						shadow3.classList.add('shadowAnimate')
-					} else {
-						bar3.classList.remove('barAnimate')
-						arrows3.classList.remove('arrowsAnimate')
-						shadow3.classList.remove('shadowAnimate')
+		  </svg>
+		  <div id="detector"></div>
+		  <script>
+			const button = document.querySelector('#icon-03');
+			const bar3 = document.querySelector('.bar-03');
+			const arrows3 = document.querySelector('.arrows-03');
+			const shadow3 = document.querySelector('.shadow-03');
+	
+			console.log(button)
+	
+			button.addEventListener('click', () => {
+				const isActive = bar3.classList.contains('barAnimate')
+				
+				if (!isActive) {
+					bar3.classList.add('barAnimate')
+					arrows3.classList.add('arrowsAnimate')
+					shadow3.classList.add('shadowAnimate')
+				} else {
+					bar3.classList.remove('barAnimate')
+					arrows3.classList.remove('arrowsAnimate')
+					shadow3.classList.remove('shadowAnimate')
+				}
+			});
+
+			const bar4 = document.querySelector('.bar-04');
+			const arrows4 = document.querySelector('.arrows-04');
+			const shadow4 = document.querySelector('.shadow-04');
+			
+			// Scroll triggered SVG
+			// Get the trigger element + the element to change
+			const detector = document.querySelector('#detector')
+			const elementToChange = document.querySelector('#data-04')
+
+			// Create the observer
+			const observer = new IntersectionObserver(entries => {
+				entries.forEach(entry => {
+					// If element is in view, add active
+					if (entry.isIntersecting){
+						elementToChange.classList.add("active")
+					}
+					else {
+						// Otherwise, remove active
+						elementToChange.classList.remove("active")
 					}
 				});
-
-				const bar4 = document.querySelector('.bar-04');
-				const arrows4 = document.querySelector('.arrows-04');
-				const shadow4 = document.querySelector('.shadow-04');
-
-				const observer = new IntersectionObserver(entries => {
-					entries.forEach(entry => {
-						if (entry.isIntersecting) {
-							console.log("hi")
-							bar4.classList.add('barAnimate');
-							arrows4.classList.add('arrowsAnimate');
-							shadow4.classList.add('shadowAnimate');
-							return;
-						}
-						bar4.classList.remove('barAnimate');
-						arrows4.classList.remove('arrowsAnimate');
-						shadow4.classList.remove('shadowAnimate');
-					})
-				});
-		
-				observer.observe(document.querySelector('#data-04'));
-		
-			</script>
-		  </svg>
+			});
+		</script>
     </body>
 </html>
