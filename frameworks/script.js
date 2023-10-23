@@ -127,7 +127,7 @@ const splash = new mojs.Burst({
     left: 0, top: 0,
     radius:   20,
     count:    6,
-    timeline: { delay: 50 },
+    delay: 200 ,
     children: {
       stroke:       'white',
       fill:         'none',
@@ -135,9 +135,9 @@ const splash = new mojs.Burst({
       strokeWidth:  { 8: 0 },
       radius:       { 0 : 'rand(6, 10)' },
       degreeShift:  'rand(-50, 50)',
-      duration:     750,
+      duration:     700,
       easing:       'circ.out',
-    }
+    },
   });
   
   document.addEventListener( 'click', function (e) {
