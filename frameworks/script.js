@@ -14,14 +14,6 @@
 
 bouncyCircle.play()*/
 
-var rect = new mojs.Shape({
-  shape:        'rect',
-  radius:       15,
-  left:         '50%',
-  fill:         'cyan',
-  isShowStart:  true,
-});
-
 class Lily1 extends mojs.CustomShape {
     getShape () { return '<path d="M47.54541,26.45785s-16.33536-1.92181-21.13988,10.56994-.9609,16.81582,1.44136,22.10079,29.30756,14.89401,35.07299-5.76542-5.28497-23.54214-5.28497-23.54214l-10.56994,9.12859,.48045-12.49175Z"/>'; }
 }
@@ -41,6 +33,14 @@ class Lily4 extends mojs.CustomShape {
   getShape () { return '<path class="cls-1" d="M15.35805,65.63314S5.71325,32.7078,39.96891,25.39106s37.58144,21.28507,37.58144,26.27375-7.31674,39.9095-37.58144,28.93439l1.99547-17.95927-12.63801,13.30317s-7.64932,0-13.96832-10.30995Z"/>'; }
 }
 mojs.addShape( 'lily4', Lily4 );
+
+var fish1info = new mojs.Shape({
+  shape:        'rect',
+  radius:       {0: 65},
+  x: -400,
+  y: 0,
+  fill:         'red',
+})
   
 const lily1 = new mojs.Shape({
     shape:    'lily1', 
@@ -67,8 +67,8 @@ const lily3 = new mojs.Shape({
   shape:    'lily3',
   fill:     '#8eba5e',
   easing:       'back.inout',
-  y: {100: 80},
-  x: {10: -20},
+  y: {100: 90},
+  x: {100: 90},
   duration:     5000,
   isYoyo: true,
   repeat: 999,
@@ -135,6 +135,17 @@ const splash = new mojs.Burst({
       easing:       'circ.out',
     },
   });
+
+  const fish1s = document.querySelector("#Fish1s");
+  const fish1text = document.querySelector('#fish1text');
+  /*const q = document.querySelector(".q");*/
+
+  document.addEventListener( 'mousemove', function (e) {
+    moveSplash
+      .tune({ x: e.pageX, y: e.pageY })
+      .generate()
+      .replay();
+  });
   
   document.addEventListener( 'click', function (e) {
     splash
@@ -148,9 +159,11 @@ const splash = new mojs.Burst({
       .replay();
   });
 
-  document.addEventListener( 'mousemove', function (e) {
-    moveSplash
-      .tune({ x: e.pageX, y: e.pageY })
-      .generate()
-      .replay();
+  fish1s.addEventListener( 'click', () => {
+    fish1info.play();
+    fish1text.removeAttribute("hidden");
   });
+
+  /*q.addEventListener( 'click', () => {
+    rect.playBackward();
+  });*/
