@@ -14,6 +14,14 @@
 
 bouncyCircle.play()*/
 
+var rect = new mojs.Shape({
+  shape:        'rect',
+  radius:       15,
+  left:         '50%',
+  fill:         'cyan',
+  isShowStart:  true,
+});
+
 class Lily1 extends mojs.CustomShape {
     getShape () { return '<path d="M47.54541,26.45785s-16.33536-1.92181-21.13988,10.56994-.9609,16.81582,1.44136,22.10079,29.30756,14.89401,35.07299-5.76542-5.28497-23.54214-5.28497-23.54214l-10.56994,9.12859,.48045-12.49175Z"/>'; }
 }
@@ -35,21 +43,17 @@ class Lily4 extends mojs.CustomShape {
 mojs.addShape( 'lily4', Lily4 );
   
 const lily1 = new mojs.Shape({
-    parent:   '#lily1',
     shape:    'lily1', 
     fill:     '#8eab62',
     easing:       'back.inout',
-    x: {50: 90},
-    y: {50: 90},
+    x: {[-200]: -170},
+    y: {[-200]: -170},
     duration:     7000,
     isYoyo: true,
     repeat: 999,
-});
-
-lily1.play()
+}).play();
 
 const lily2 = new mojs.Shape({
-  parent:   '#lily2',
   shape:    'lily2', 
   fill:     '#9dbb67',
   easing:       'back.inout',
@@ -57,12 +61,9 @@ const lily2 = new mojs.Shape({
   duration:     9000,
   isYoyo: true,
   repeat: 999,
-});
-
-lily2.play()
+}).play();
 
 const lily3 = new mojs.Shape({
-  parent:   '#lily3',
   shape:    'lily3',
   fill:     '#8eba5e',
   easing:       'back.inout',
@@ -71,23 +72,18 @@ const lily3 = new mojs.Shape({
   duration:     5000,
   isYoyo: true,
   repeat: 999,
-});
-
-lily3.play()
+}).play();
 
 const lily4 = new mojs.Shape({
-  parent:   '#lily4',
   shape:    'lily4',
   fill:     '#b1c366',
-  y: {100: 90},
+  y: {[-50]: -30},
   x: {10: 0},
   easing:       'back.inout',
   duration:     2000,
   isYoyo: true,
   repeat: 999,
-});
-
-lily4.play()
+}).play();
 
 const splash = new mojs.Burst({
     left: 0, top: 0,
