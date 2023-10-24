@@ -20,7 +20,7 @@ class Lily1 extends mojs.CustomShape {
 mojs.addShape( 'lily1', Lily1 );
 
 class Lily2 extends mojs.CustomShape {
-  getShape () { return '<path class="cls-1" d="M75.55151,43.00006c-.41345-5.78796-8.68195-29.35327-28.93982-31.8338C26.35376,8.68567,10.64355,19.02136,8.98987,47.13434c-.84833,14.42151,8.74762,22.53052,18.29553,27.01074l6.7851-9.80072v12.45807c2.44623,.7901,4.69171,1.35333,6.53003,1.74945,2.87402,.82526,16.84814,4.15051,24.61536-6.612,5.37451-3.72083,10.74902-23.15186,10.33563-28.93982Z"/>'; }
+  getShape () { return '<path d="M75.55151,43.00006c-.41345-5.78796-8.68195-29.35327-28.93982-31.8338C26.35376,8.68567,10.64355,19.02136,8.98987,47.13434c-.84833,14.42151,8.74762,22.53052,18.29553,27.01074l6.7851-9.80072v12.45807c2.44623,.7901,4.69171,1.35333,6.53003,1.74945,2.87402,.82526,16.84814,4.15051,24.61536-6.612,5.37451-3.72083,10.74902-23.15186,10.33563-28.93982Z"/>'; }
 }
 mojs.addShape( 'lily2', Lily2 );
 
@@ -30,7 +30,7 @@ class Lily3 extends mojs.CustomShape {
 mojs.addShape( 'lily3', Lily3 );
 
 class Lily4 extends mojs.CustomShape {
-  getShape () { return '<path class="cls-1" d="M15.35805,65.63314S5.71325,32.7078,39.96891,25.39106s37.58144,21.28507,37.58144,26.27375-7.31674,39.9095-37.58144,28.93439l1.99547-17.95927-12.63801,13.30317s-7.64932,0-13.96832-10.30995Z"/>'; }
+  getShape () { return '<path d="M15.35805,65.63314S5.71325,32.7078,39.96891,25.39106s37.58144,21.28507,37.58144,26.27375-7.31674,39.9095-37.58144,28.93439l1.99547-17.95927-12.63801,13.30317s-7.64932,0-13.96832-10.30995Z"/>'; }
 }
 mojs.addShape( 'lily4', Lily4 );
 
@@ -138,6 +138,7 @@ const splash = new mojs.Burst({
 
   const fish1s = document.querySelector("#Fish1s");
   const fish1text = document.querySelector('#fish1text');
+  const fish1c = document.querySelector(".Fish1c");
   /*const q = document.querySelector(".q");*/
 
   document.addEventListener( 'mousemove', function (e) {
@@ -162,6 +163,13 @@ const splash = new mojs.Burst({
   fish1s.addEventListener( 'click', () => {
     fish1info.play();
     fish1text.removeAttribute("hidden");
+    fish1c.classList.add("appear");
+  });
+
+  fish1c.addEventListener('click', () => {
+    fish1info.playBackward();
+    fish1text.setAttribute("hidden", true);
+    fish1c.classList.remove("appear");
   });
 
   /*q.addEventListener( 'click', () => {
