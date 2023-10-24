@@ -66,47 +66,94 @@ var fish4info = new mojs.Shape({
   fill:         'pink',
 })
   
-const lily1 = new mojs.Shape({
+const lily5 = new mojs.Shape({
     shape:    'lily1', 
     fill:     '#8eab62',
     easing:       'back.inout',
-    x: {[-200]: -170},
-    y: {[-200]: -170},
-    duration:     7000,
+    x: {[-500]: -470},
+    y: {[-500]: -470},
+    rotate: 90,
+    duration:     10000,
     isYoyo: true,
     repeat: 999,
 }).play();
 
-const lily2 = new mojs.Shape({
+const lily6 = new mojs.Shape({
   shape:    'lily2', 
   fill:     '#9dbb67',
   easing:       'back.inout',
-  x: {650: 610},
-  duration:     9000,
+  x: {[-750]: -710},
+  rotate: 90,
+  duration:     11000,
   isYoyo: true,
   repeat: 999,
 }).play();
 
-const lily3 = new mojs.Shape({
+const lily7 = new mojs.Shape({
   shape:    'lily3',
   fill:     '#8eba5e',
   easing:       'back.inout',
-  y: {100: 90},
-  x: {100: 90},
-  duration:     5000,
+  y: {[-300]: -290},
+  x: {[300]: 290},
+  rotate: 90,
+  duration:     12000,
   isYoyo: true,
   repeat: 999,
 }).play();
 
-const lily4 = new mojs.Shape({
+const lily8 = new mojs.Shape({
   shape:    'lily4',
   fill:     '#b1c366',
-  y: {[-50]: -30},
-  x: {10: 0},
+  y: {[500]: 480},
+  x: -100,
+  rotate: 90,
   easing:       'back.inout',
-  duration:     2000,
+  duration:     13000,
   isYoyo: true,
   repeat: 999,
+}).play();
+
+const lily1 = new mojs.Shape({
+  shape:    'lily1', 
+  fill:     '#8eab62',
+  easing:       'back.inout',
+  x: {[-200]: -170},
+  y: {[-200]: -170},
+  duration:     7000,
+  isYoyo: true,
+  repeat: 999,
+}).play();
+
+const lily2 = new mojs.Shape({
+shape:    'lily2', 
+fill:     '#9dbb67',
+easing:       'back.inout',
+x: {650: 610},
+duration:     9000,
+isYoyo: true,
+repeat: 999,
+}).play();
+
+const lily3 = new mojs.Shape({
+shape:    'lily3',
+fill:     '#8eba5e',
+easing:       'back.inout',
+y: {100: 90},
+x: {100: 90},
+duration:     5000,
+isYoyo: true,
+repeat: 999,
+}).play();
+
+const lily4 = new mojs.Shape({
+shape:    'lily4',
+fill:     '#b1c366',
+y: {[-50]: -30},
+x: {10: 0},
+easing:       'back.inout',
+duration:     2000,
+isYoyo: true,
+repeat: 999,
 }).play();
 
 const splash = new mojs.Burst({
