@@ -36,10 +36,34 @@ mojs.addShape( 'lily4', Lily4 );
 
 var fish1info = new mojs.Shape({
   shape:        'rect',
-  radius:       {0: 65},
-  x: -400,
-  y: 0,
-  fill:         'red',
+  radius:       {0: 30},
+  x: -375,
+  y: 18,
+  fill:         'pink',
+})
+
+var fish2info = new mojs.Shape({
+  shape:        'rect',
+  radius:       {0: 30},
+  x: 520,
+  y: 200,
+  fill:         'pink',
+})
+
+var fish3info = new mojs.Shape({
+  shape:        'rect',
+  radius:       {0: 30},
+  x: 200,
+  y: 300,
+  fill:         'pink',
+})
+
+var fish4info = new mojs.Shape({
+  shape:        'rect',
+  radius:       {0: 30},
+  x: 200,
+  y: -300,
+  fill:         'pink',
 })
   
 const lily1 = new mojs.Shape({
@@ -139,6 +163,18 @@ const splash = new mojs.Burst({
   const fish1s = document.querySelector("#Fish1s");
   const fish1text = document.querySelector('#fish1text');
   const fish1c = document.querySelector(".Fish1c");
+
+  const fish2s = document.querySelector("#Fish2s");
+  const fish2text = document.querySelector('#fish2text');
+  const fish2c = document.querySelector(".Fish2c");
+
+  const fish3s = document.querySelector("#Fish3s");
+  const fish3text = document.querySelector('#fish3text');
+  const fish3c = document.querySelector(".Fish3c");
+
+  const fish4s = document.querySelector("#Fish4s");
+  const fish4text = document.querySelector('#fish4text');
+  const fish4c = document.querySelector(".Fish4c");
   /*const q = document.querySelector(".q");*/
 
   document.addEventListener( 'mousemove', function (e) {
@@ -172,6 +208,38 @@ const splash = new mojs.Burst({
     fish1c.classList.remove("appear");
   });
 
-  /*q.addEventListener( 'click', () => {
-    rect.playBackward();
-  });*/
+  fish2s.addEventListener( 'click', () => {
+    fish2info.play();
+    fish2text.removeAttribute("hidden");
+    fish2c.classList.add("appear");
+  });
+
+  fish2c.addEventListener('click', () => {
+    fish2info.playBackward();
+    fish2text.setAttribute("hidden", true);
+    fish2c.classList.remove("appear");
+  });
+
+  fish3s.addEventListener( 'click', () => {
+    fish3info.play();
+    fish3text.removeAttribute("hidden");
+    fish3c.classList.add("appear");
+  });
+
+  fish3c.addEventListener('click', () => {
+    fish3info.playBackward();
+    fish3text.setAttribute("hidden", true);
+    fish3c.classList.remove("appear");
+  });
+
+  fish4s.addEventListener( 'click', () => {
+    fish4info.play();
+    fish4text.removeAttribute("hidden");
+    fish4c.classList.add("appear");
+  });
+
+  fish4c.addEventListener('click', () => {
+    fish4info.playBackward();
+    fish4text.setAttribute("hidden", true);
+    fish4c.classList.remove("appear");
+  });
