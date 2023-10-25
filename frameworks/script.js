@@ -34,44 +34,88 @@ class Lily4 extends mojs.CustomShape {
 }
 mojs.addShape( 'lily4', Lily4 );
 
+const OPTS = {
+  fill:           'none',
+  radius:         60,
+  strokeWidth:    { 50 : 0 },
+  scale:          { 0: 1 },
+  opacity: {0: .25},
+  angle:          { 'rand(-35, -70)': 0 },
+  duration:       500,
+  stroke:         'white',
+  easing: 'cubic.out'
+};
+
 var fish1info = new mojs.Shape({
   shape:        'rect',
   radius:       {0: 30},
+  rotate: {240: 0},
+  opacity: {0: .25},
   x: -375,
   y: 18,
-  fill:         'pink',
+  fill:         'blue',
 })
+
+const circle1 = new mojs.Shape({
+  ...OPTS,
+  x: -375,
+  y: 18,
+});
 
 var fish2info = new mojs.Shape({
   shape:        'rect',
   radius:       {0: 30},
+  rotate: {240: 0},
+  opacity: {0: .25},
   x: 520,
   y: 200,
-  fill:         'pink',
+  fill:         'blue',
+})
+
+const circle2 = new mojs.Shape({
+  ...OPTS,
+  x: 520,
+  y: 200,
 })
 
 var fish3info = new mojs.Shape({
   shape:        'rect',
   radius:       {0: 30},
+  rotate: {240: 0},
+  opacity: {0: .25},
   x: 200,
   y: 300,
-  fill:         'pink',
+  fill:         'blue',
 })
+
+const circle3 = new mojs.Shape({
+  ...OPTS,
+  x: 200,
+  y: 300,
+});
 
 var fish4info = new mojs.Shape({
   shape:        'rect',
   radius:       {0: 30},
+  rotate: {240: 0},
+  opacity: {0: .25},
   x: 200,
   y: -300,
-  fill:         'pink',
+  fill:         'blue',
 })
+
+const circle4 = new mojs.Shape({
+  ...OPTS,
+  x: 200,
+  y: -300,
+});
   
 const lily5 = new mojs.Shape({
     shape:    'lily1', 
     fill:     '#8eab62',
     easing:       'back.inout',
-    x: {[-500]: -470},
-    y: {[-500]: -470},
+    x: {[-300]: -290},
+    y: {[-300]: -290},
     rotate: 90,
     duration:     10000,
     isYoyo: true,
@@ -247,46 +291,54 @@ const splash = new mojs.Burst({
     fish1info.play();
     fish1text.removeAttribute("hidden");
     fish1c.classList.add("appear");
+    circle1.play();
   });
 
   fish1c.addEventListener('click', () => {
     fish1info.playBackward();
     fish1text.setAttribute("hidden", true);
     fish1c.classList.remove("appear");
+    circle1.playBackward();
   });
 
   fish2s.addEventListener( 'click', () => {
     fish2info.play();
     fish2text.removeAttribute("hidden");
     fish2c.classList.add("appear");
+    circle2.play();
   });
 
   fish2c.addEventListener('click', () => {
     fish2info.playBackward();
     fish2text.setAttribute("hidden", true);
     fish2c.classList.remove("appear");
+    circle2.playBackward();
   });
 
   fish3s.addEventListener( 'click', () => {
     fish3info.play();
     fish3text.removeAttribute("hidden");
     fish3c.classList.add("appear");
+    circle3.play();
   });
 
   fish3c.addEventListener('click', () => {
     fish3info.playBackward();
     fish3text.setAttribute("hidden", true);
     fish3c.classList.remove("appear");
+    circle3.playBackward();
   });
 
   fish4s.addEventListener( 'click', () => {
     fish4info.play();
     fish4text.removeAttribute("hidden");
     fish4c.classList.add("appear");
+    circle4.play();
   });
 
   fish4c.addEventListener('click', () => {
     fish4info.playBackward();
     fish4text.setAttribute("hidden", true);
     fish4c.classList.remove("appear");
+    circle4.playBackward();
   });

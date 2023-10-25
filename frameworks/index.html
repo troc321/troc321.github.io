@@ -117,14 +117,14 @@
 				position: absolute;
 				top: 50%;
 				left: 50%;
-				transform: translate(50%, 50%) translateX(475px) translateY(165px);
+				transform: translate(50%, 50%) translateX(470px) translateY(165px);
 				z-index: 99 !important;
 			}
 			#fish3text {
 				position: absolute;
 				top: 50%;
 				left: 50%;
-				transform: translate(50%, 50%) translateX(145px) translateY(265px);
+				transform: translate(50%, 50%) translateX(141px) translateY(265px);
 				z-index: 99 !important;
 			}
 
@@ -132,8 +132,45 @@
 				position: absolute;
 				top: 50%;
 				left: 50%;
-				transform: translate(50%, 50%) translateX(149px) translateY(-335px);
+				transform: translate(50%, 50%) translateX(146px) translateY(-335px);
 				z-index: 99 !important;
+			}
+
+			/* "Nav bar" */
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: lightgrey;
+			}
+
+			li {
+				float: left;
+			}
+
+			li a {
+				display: block;
+				color: grey;
+				padding: 20px 212px;
+				text-decoration: none;
+			}
+			
+			li a:hover {
+				background-color: #111;
+			}
+
+			h1 {
+				left: 0;
+				line-height: 200px;
+				margin-top: 15px;
+				position: absolute;
+				text-align: center;
+				opacity: .25;
+				top: 50%;
+				width: 100%;
+				font-size: 80px;
+				font-family: Georgia, serif;
 			}
 
 			/* Fish1 Animation */
@@ -242,10 +279,18 @@
     <body>
 		<script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
 		<script src="script.js" defer></script>
-		<p hidden id="fish1text">Goldfish</p>
-		<p hidden id="fish2text">Catfish</p>
-		<p hidden id="fish3text">Koi Fish</p>
-		<p hidden id="fish4text">Bluegill</p>
+		<p hidden id="fish1text" style="font-family: Georgia, serif;">Goldfish</p>
+		<p hidden id="fish2text" style="font-family: Georgia, serif;">Catfish</p>
+		<p hidden id="fish3text" style="font-family: Georgia, serif;">Koi Fish</p>
+		<p hidden id="fish4text" style="font-family: Georgia, serif;">Bluegill</p>
+		<h1>Winkle-Repass Aquarium</h1>
+
+		<ul>
+			<li><a href="goldfish.svg">Goldfish</a></li>
+			<li><a href="catfish.svg">Catfish</a></li>
+			<li><a href="koi.svg">Koi Fish</a></li>
+			<li><a href="bluegill.svg">Bluegill</a></li>
+		</ul>
 
 		<svg id="Fish1s" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
 			<defs>
