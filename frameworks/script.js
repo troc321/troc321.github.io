@@ -115,19 +115,17 @@ var fish5info = new mojs.Shape({
   radius:       {0: 30},
   rotate: {240: 0},
   opacity: {0: .25},
-  x: 200,
-  y: -300,
+  x: -370,
+  y: 300,
   fill:         'blue',
 })
 
 const circle5 = new mojs.Shape({
   ...OPTS,
-  x: 200,
-  y: -300,
+  x: -370,
+  y: 300,
 });
 
-
-  
 const lily5 = new mojs.Shape({
     shape:    'lily1', 
     fill:     '#8eab62',
@@ -284,11 +282,13 @@ const splash = new mojs.Burst({
   const fish4s = document.querySelector("#Fish4s");
   const fish4text = document.querySelector('#fish4text');
   const fish4c = document.querySelector(".Fish4c");
-  /*const q = document.querySelector(".q");*/
 
   const fish5s = document.querySelector("#Fish5s");
-  const fish5text = documnent.querySelector('#fish5text');
+  const fish5text = document.querySelector('#fish5text');
   const fish5c = document.querySelector(".Fish5c");
+
+  const hamburg = document.querySelector(".h");
+  const menu = document.querySelector(".menu");
 
   document.addEventListener( 'mousemove', function (e) {
     moveSplash
@@ -365,7 +365,7 @@ const splash = new mojs.Burst({
     circle4.playBackward();
   });
 
-  fish5s.addEventListener('click', () => {
+  fish5s.addEventListener( 'click', () => {
     fish5info.play();
     fish5text.removeAttribute("hidden");
     fish5c.classList.add("appear");
@@ -377,6 +377,18 @@ const splash = new mojs.Burst({
     fish5text.setAttribute("hidden", true);
     fish5c.classList.remove("appear");
     circle5.playBackward();
+  });
+
+  var isActive = false;
+
+  hamburg.addEventListener('click', () => {
+    if (!isActive) {
+      menu.removeAttribute("hidden");
+      isActive = true;
+    } else {
+      menu.setAttribute("hidden", true);
+      isActive = false;
+    }
   });
 
   
