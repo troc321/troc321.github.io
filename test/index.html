@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+        <title>Loading Animation</title>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            .animated-element{
+                width: 200px;
+                height: 200px;
+                margin: 50px auto;
+                padding-top: 75px;
+                background: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS Loading Animation</h1>
+        <div data-aos="flip-up" class="animated-element"></div>
+        <div data-aos="zoom-in-left" data-aos-duration="1000" class="animated-element"></div>
+        <div data-aos="zoom-in-left" data-aos-duration="1000" class="animated-element"></div>
+        <div data-aos="zoom-in-left" data-aos-duration="1000" class="animated-element"></div>
+        <div data-aos="zoom-in-left" data-aos-duration="1000" class="animated-element"></div>
+        <div data-aos="zoom-in-left" data-aos-duration="1000" class="animated-element"></div>
+        <div data-aos="zoom-in-left" data-aos-duration="1000" class="animated-element"></div>
+        <div data-aos="zoom-in-left" data-aos-duration="1000" class="animated-element"></div>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </body>
+</html>
