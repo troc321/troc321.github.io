@@ -6,44 +6,107 @@
     <title>RV Helping Hands</title>
     <style>
         body {
-            position: relative;
             max-width: 700px; /* Set the desired max width in pixels or another unit */
             margin: 0 auto; /* Center the content horizontally */
         }
 
-        #logo {
-            position: relative;
-            width: 30%;
-            height: 30%;
-            transform: translateX(45px) translateY(-2400px);
+        /* Styles for large mobile */
+        @media only screen and (max-width: 425px) {
+            #logo {
+                width: 30%;
+                height: 30%;
+                transform: translateX(30px) translateY(-1445px);
+            }
+
+            #location {
+                width: 50%;
+                height: 50%;
+                transform: translateX(81px) translateY(-1590px);
+            }
+
+            #next-stop-sign {
+                width: 45%;
+                height: 45%;
+                transform: translateX(200px) translateY(-1050px);
+            }
+
+            #call-sign-with-shadow {
+                width: 15%;
+                height: 15%;
+                transform: translateX(-170px) translateY(-1450px);
+            }
+
+            #email-sign-with-shadow {
+                width: 15%;
+                height: 15%;
+                transform: translateX(-165px) translateY(-1450px);
+            }
         }
 
-        #location {
-            position: relative;
-            width: 50%;
-            height: 50%;
-            transform: translateX(136px) translateY(-2620px);
+        /* Styles for larger screens (desktop) */
+        @media only screen and (min-width: 768px) {
+            #logo {
+                width: 30%;
+                height: 30%;
+                transform: translateX(45px) translateY(-2400px);
+            }
+
+            #location {
+                width: 50%;
+                height: 50%;
+                transform: translateX(136px) translateY(-2620px);
+            }
+
+            #next-stop-sign {
+                width: 45%;
+                height: 45%;
+                transform: translateX(325px) translateY(-1700px);
+            }
+
+            #call-sign-with-shadow {
+                width: 15%;
+                height: 15%;
+                transform: translateX(-275px) translateY(-2380px);
+            }
+
+            #email-sign-with-shadow {
+                width: 15%;
+                height: 15%;
+                transform: translateX(-260px) translateY(-2381px);
+            }
         }
 
-        #next-stop-sign {
-            position: relative;
-            width: 45%;
-            height: 45%;
-            transform: translateX(325px) translateY(-1700px);
-        }
+        /* Styles for med. mobile */
+        @media only screen and (min-width: 325px) and (max-width: 380px) {
+            #logo {
+                width: 30%;
+                height: 30%;
+                transform: translateX(25px) translateY(-1280px);
+            }
 
-        #call-sign-with-shadow {
-            position: relative;
-            width: 15%;
-            height: 15%;
-            transform: translateX(-275px) translateY(-2380px);
-        }
+            #location {
+                width: 50%;
+                height: 50%;
+                transform: translateX(71px) translateY(-1400px);
+            }
 
-        #email-sign-with-shadow {
-            position: relative;
-            width: 15%;
-            height: 15%;
-            transform: translateX(-260px) translateY(-2381px);
+            #next-stop-sign {
+                width: 45%;
+                height: 45%;
+                transform: translateX(180px) translateY(-900px);
+            }
+
+            #call-sign-with-shadow {
+                width: 15%;
+                height: 15%;
+                transform: translateX(-150px) translateY(-1280px);
+            }
+
+            #email-sign-with-shadow {
+                width: 15%;
+                height: 15%;
+                transform: translateX(-140px) translateY(-1281px);
+            }
         }
 
     </style>
