@@ -11,3 +11,12 @@ gsap.to("#movingRV", {
     repeatDelay: 0,
     ease: "sine.inOut"
   });
+
+  
+  gsap.set("#whole-pin", {y: -100});
+
+  gsap.to("#whole-pin", {
+    duration: 2,
+    y: "0",
+    ease: "bounce.out"
+  })
