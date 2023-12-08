@@ -53,3 +53,22 @@ gsap.to("#movingRV", {
     ease: "power1.out"
   });
   
+  gsap.set("#phone-icon", {y: -150, scale: 0, transformOrigin: "center"});
+  gsap.set("#call-sign-post", {scale: 0, transformOrigin: "0px -50px"});
+  gsap.set("#call-sign-shadow", {scale: 0, transformOrigin: "center"});
+  gsap.to("#call-sign-shadow", {
+    scrollTrigger: "#call-sign-shadow",
+    scale: 1,
+  });
+
+  gsap.to("#phone-icon", {
+    scrollTrigger: "#call-sign-shadow",
+    duration: 2,
+    y: 0,
+    scale: 1,
+    ease: "bounce.out"
+  });
+  gsap.to("#call-sign-post", {
+    scrollTrigger: "#call-sign-shadow",
+    scale: 1,
+  });
