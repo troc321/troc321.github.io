@@ -56,11 +56,14 @@ gsap.to("#movingRV", {
   gsap.set("#phone-icon", {y: -150, scale: 0, transformOrigin: "center"});
   gsap.set("#call-sign-post", {scale: 0, transformOrigin: "0px -50px"});
   gsap.set("#call-sign-shadow", {scale: 0, transformOrigin: "center"});
+  gsap.set("#email-sign-shadow", {scale: 0, transformOrigin: "center"});
+  gsap.set("#email-icon", {y: -150, scale: 0, transformOrigin: "center"});
+  gsap.set("#email-sign-post", {scale: 0, transformOrigin: "0px -50px"});
+  
   gsap.to("#call-sign-shadow", {
     scrollTrigger: "#call-sign-shadow",
     scale: 1,
   });
-
   gsap.to("#phone-icon", {
     scrollTrigger: "#call-sign-shadow",
     duration: 2,
@@ -70,5 +73,21 @@ gsap.to("#movingRV", {
   });
   gsap.to("#call-sign-post", {
     scrollTrigger: "#call-sign-shadow",
+    scale: 1,
+  });
+
+  gsap.to("#email-sign-shadow", {
+    scrollTrigger: "#email-sign-shadow",
+    scale: 1,
+  });
+  gsap.to("#email-icon", {
+    scrollTrigger: "#email-sign-shadow",
+    duration: 2,
+    y: 0,
+    scale: 1,
+    ease: "bounce.out"
+  });
+  gsap.to("#email-sign-post", {
+    scrollTrigger: "#email-sign-shadow",
     scale: 1,
   });
