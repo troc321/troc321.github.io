@@ -74,6 +74,14 @@ gsap.to("#movingRV", {
     ease: "power1.out"
   });
 
+  gsap.set("#next-stop-sign", {x: -300});
+  gsap.to("#next-stop-sign", {
+    scrollTrigger: "#next-stop-sign-shadow",
+    duration: 1.25,
+    x: 0,
+    ease: "bounce.out"
+  });
+
   function callNumber() {
     var phoneNumber = '5854549408'; // Replace with the desired phone number
     window.location.href = 'tel:' + phoneNumber;
