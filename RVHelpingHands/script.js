@@ -22,9 +22,11 @@ gsap.to("#movingRV", {
 
   gsap.set("#pin-tab", {x: 1000});
   gsap.to("#pin-tab", {
+    scrollTrigger: "#pin-tab", 
     duration: .9,
     x: 0,
     delay: 1.51,
+    pin: true,
     ease: "power1.out"
   });
 
@@ -53,41 +55,40 @@ gsap.to("#movingRV", {
     ease: "power1.out"
   });
   
-  gsap.set("#phone-icon", {y: -150, scale: 0, transformOrigin: "center"});
-  gsap.set("#call-sign-post", {scale: 0, transformOrigin: "0px -50px"});
-  gsap.set("#call-sign-shadow", {scale: 0, transformOrigin: "center"});
-  gsap.set("#email-sign-shadow", {scale: 0, transformOrigin: "center"});
-  gsap.set("#email-icon", {y: -150, scale: 0, transformOrigin: "center"});
-  gsap.set("#email-sign-post", {scale: 0, transformOrigin: "0px -50px"});
+  gsap.set("#phone-icon", {scale: 0, transformOrigin: "center"});
+  gsap.set("#email-icon", {scale: 0, transformOrigin: "center"});
   
-  gsap.to("#call-sign-shadow", {
-    scrollTrigger: "#call-sign-shadow",
-    scale: 1,
-  });
   gsap.to("#phone-icon", {
-    scrollTrigger: "#call-sign-shadow",
-    duration: 2,
-    y: 0,
-    scale: 1,
-    ease: "bounce.out"
-  });
-  gsap.to("#call-sign-post", {
-    scrollTrigger: "#call-sign-shadow",
-    scale: 1,
-  });
-
-  gsap.to("#email-sign-shadow", {
     scrollTrigger: "#email-sign-shadow",
+    duration: 2,
     scale: 1,
+    rotate: 360,
+    ease: "power1.out"
   });
+  
   gsap.to("#email-icon", {
     scrollTrigger: "#email-sign-shadow",
     duration: 2,
-    y: 0,
     scale: 1,
-    ease: "bounce.out"
+    rotate: 360,
+    ease: "power1.out"
   });
-  gsap.to("#email-sign-post", {
-    scrollTrigger: "#email-sign-shadow",
-    scale: 1,
-  });
+
+  function callNumber() {
+    var phoneNumber = '5854549408'; // Replace with the desired phone number
+    window.location.href = 'tel:' + phoneNumber;
+  }
+
+  function openEmailApp() {
+    // Change the email address to the desired recipient
+    var emailAddress = 'mike@rvhelpinghands.com';
+    
+    // Create the mailto link
+    var mailtoLink = 'mailto:' + emailAddress;
+
+    // Open the default email client
+    window.location.href = mailtoLink;
+  }
+
+  
+
