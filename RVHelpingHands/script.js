@@ -7,7 +7,7 @@ gsap.to("#movingRV", {
       alignOrigin: [0.5, 0.5],
       autoRotate: 270,
     },
-    scale: 1,
+    scale: .75,
     repeat: -1,
     ease: "sine.inOut"
   });
