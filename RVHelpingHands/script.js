@@ -1,3 +1,4 @@
+// GSAP STUFF
 gsap.to("#movingRV", {
     duration: 16,
     motionPath: {
@@ -74,14 +75,17 @@ gsap.to("#movingRV", {
     ease: "power1.out"
   });
 
-  gsap.set("#next-stop-sign", {x: -300});
+  gsap.set("#next-stop-sign", {x: -300, opacity: 0});
   gsap.to("#next-stop-sign", {
     scrollTrigger: "#next-stop-sign-shadow",
     duration: 1.25,
-    x: 0,
+    x: 20,
+    opacity: 1,
     ease: "bounce.out"
   });
+  //GSAP STUFF
 
+  //JS STUFF
   function callNumber() {
     var phoneNumber = '5854549408'; // Replace with the desired phone number
     window.location.href = 'tel:' + phoneNumber;
@@ -97,6 +101,19 @@ gsap.to("#movingRV", {
     // Open the default email client
     window.location.href = mailtoLink;
   }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var loadingScreen = document.getElementById("loading-screen");
+
+    // Set the duration for the video to play in milliseconds (e.g., 5000ms for 5 seconds)
+    var videoDuration = 1550;
+
+    // Hide the loading screen after the specified duration
+    setTimeout(function () {
+        loadingScreen.style.display = "none";
+    }, videoDuration);
+});
+//JS STUFF
 
   
 
