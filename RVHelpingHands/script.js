@@ -1,6 +1,6 @@
 // GSAP STUFF
 gsap.to("#movingRV", {
-    duration: 16,
+    duration: 25,
     motionPath: {
       path: "#road-path",
       align: "#road-path",
@@ -17,7 +17,7 @@ gsap.to("#movingRV", {
   gsap.to("#whole-pin", {
     duration: 1.25,
     y: 0,
-    delay: 2.5, 
+    delay: 3.9, 
     ease: "bounce.out"
   });
 
@@ -26,7 +26,7 @@ gsap.to("#movingRV", {
     scrollTrigger: "#pin-tab", 
     duration: .9,
     x: 0,
-    delay: 1.51,
+    delay: 2.35,
     pin: true,
     ease: "power1.out"
   });
@@ -36,7 +36,7 @@ gsap.to("#movingRV", {
   gsap.to("#logo", {
     duration: 1.25,
     scale: 1,
-    delay: 3.25,
+    delay: 5.07,
     ease: "power1.out"
   });
 
@@ -117,6 +117,14 @@ gsap.to("#movingRV", {
         loadingScreen.style.display = "none";
     }, videoDuration);
 });
+
+function playSound() {
+    // Get the audio element
+    var audio = document.getElementById("clickSound");
+
+    // Play the sound
+    audio.play();
+  }
 //JS STUFF
 
   

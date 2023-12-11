@@ -33,6 +33,9 @@
         #phone-icon {
           cursor: pointer;
         }
+        #movingRV {
+          cursor: pointer;
+        }
 
     </style>
 </head>
@@ -42,6 +45,7 @@
       <source src="RVAnimation2_2.mp4" type="video/mp4">
     </video>
   </div>
+  <audio id="clickSound" src="car-horn-beep-beep-two-beeps-honk-honk-6188.mp3"></audio>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/MotionPathPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
@@ -5875,7 +5879,7 @@
         </g>
       </g>
     </g>
-    <g id="movingRV" data-name="Layer 8">
+    <g onclick="playSound()" id="movingRV" data-name="Layer 8">
       <g>
         <g>
           <g id="Exhaust_3" data-name="Exhaust 3">
