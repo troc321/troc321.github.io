@@ -62,6 +62,7 @@ gsap.to("#movingRV", {
   gsap.to("#phone-icon", {
     scrollTrigger: "#email-sign-shadow",
     duration: 2,
+    delay: 1.75,
     scale: 1,
     rotate: 360,
     ease: "power1.out"
@@ -70,6 +71,7 @@ gsap.to("#movingRV", {
   gsap.to("#email-icon", {
     scrollTrigger: "#email-sign-shadow",
     duration: 2,
+    delay: 1.75,
     scale: 1,
     rotate: 360,
     ease: "power1.out"
