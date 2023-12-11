@@ -104,7 +104,9 @@ gsap.to("#movingRV", {
 
   document.addEventListener("DOMContentLoaded", function () {
     var loadingScreen = document.getElementById("loading-screen");
+    var loadingVideo = document.getElementById("loading-video");
 
+    loadingVideo.play();
     // Set the duration for the video to play in milliseconds (e.g., 5000ms for 5 seconds)
     var videoDuration = 1550;
 
