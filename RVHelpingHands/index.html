@@ -13,18 +13,29 @@
           background-size: cover;
           height: 100vh;
         }
+        #loading-screen {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #fff; /* Set a background color if your video has transparency */
+          z-index: 1000; /* Adjust the z-index as needed */
+      }
+
+        #loading-video {
+            width: 100%;
+            height: 100%;
+        }
 
     </style>
 </head>
 <body>
-    <!-- <button onclick="callNumber()">Call Now</button>
-
-    <script>
-        function callNumber() {
-            var phoneNumber = '123456789'; // Replace with the desired phone number
-            window.location.href = 'tel:' + phoneNumber;
-        }
-    </script> -->
+  <div id="loading-screen">
+    <video id="loading-video" autoplay muted loop>
+      <source src="RVAnimation2_2.mp4" type="video/mp4">
+    </video>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/MotionPathPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
