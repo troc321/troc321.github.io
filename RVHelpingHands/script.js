@@ -27,7 +27,6 @@ gsap.to("#movingRV", {
     duration: .9,
     x: 0,
     delay: 2.35,
-    pin: true,
     ease: "power1.out"
   });
 
